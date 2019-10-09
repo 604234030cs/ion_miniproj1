@@ -1,0 +1,35 @@
+
+<ion-header>
+  <ion-navbar >
+      <button ion-button menuToggle >
+          <ion-icon icon-right name="menu"></ion-icon>
+        </button>
+    <ion-title text-center>nowmovie</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    
+    
+      <ion-card-content>
+      <ion-item *ngFor="let movie of moviesArray" (click)="getDetails(movie)">
+            <ion-thumbnail  item-left>
+                <img src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}" style="display:block;width:90px;height: 120px">
+            </ion-thumbnail >
+            <ion-icon item-right color="medium" name="arrow-dropright-circle"></ion-icon>
+            <h2><b>{{movie.title}}</b></h2>
+            <p>Release&nbsp;{{movie.release_date}}</p>
+        
+      </ion-item>
+    </ion-card-content>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</ion-content>

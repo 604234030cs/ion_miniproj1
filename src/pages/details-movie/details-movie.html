@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>DetailsMovie</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card color = "light">
+  <ion-card-header >
+     <ion-thumbnail  item-start>
+            <img src="https://image.tmdb.org/t/p/original/{{moviedata.poster_path}}">
+        </ion-thumbnail >
+        
+  </ion-card-header>
+  
+
+</ion-card > 
+<button ion-button text-center icon-lef color="danger"  (click)="openVideo(moviedata.id)" ><ion-icon button-center name="videocam"></ion-icon>&nbsp; Video Trailler</button>
+  <ion-card color = "light">  
+    <ion-card-content>
+    <h2><b>release_date</b></h2>
+    <p>{{moviedata.release_date}}</p>
+    <h2><b>Average</b></h2>
+    <p>{{moviedata.vote_average}}</p>
+    <h2><b>Overview</b></h2>
+    <p>{{moviedata.overview}}</p>
+  </ion-card-content>
+  <button ion-button (click)="talk(moviedata.overview)" ><ion-icon name="volume-up"></ion-icon></button>
+  <button ion-button color ="danger" (click)="stop()" ><ion-icon name="volume-up"></ion-icon></button>
+  <ion-fab  below right edge>
+      <button ion-fab color="danger"><ion-icon name="share"></ion-icon></button>
+      <ion-fab-list side="left">
+        <button ion-fab (click)="shareFac()"><ion-icon name="logo-facebook"></ion-icon></button>
+        <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+        <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+        <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+      </ion-fab-list>
+    </ion-fab>
+  
+</ion-card>
+
+
+</ion-content>
